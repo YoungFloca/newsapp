@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <script src="https://kit.fontawesome.com/086e32f373.js" crossorigin="anonymous"></script>
+    
+    <style>
+        a {
+            text-decoration: none;
+        }
+        i {
+            margin-right: 10px;
+          }
+    </style>
+
+</head>
+<body>
+
+    <aside>
+        <img src="{% static 'main/img/whop.svg' %}" alt="логотип">
+        <span class="logo" style="font-size:30px">Пятерочка</span>
+        <h6></h6> <ul>
+           <a href="{% url 'home' %}"><li><i class="fa-solid fa-house"></i>Главаная Страница</li></a>
+           <a href="{% url 'news_home' %}"><li><i class="fa-solid fa-list"></i>Обьявления</li></a>
+           <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить Новое Обьявление</li></a>
+            
+        </ul>
+    </aside>
+
+    <main>
+        {% block content  %}
+        {% endblock %}
+    </main>
+   
+</body>
+</html>

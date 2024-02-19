@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+
+{% block title  %}
+Доска обьявлений
+{% endblock %}
+
+{% block content  %}
+<div class="hello-parent">
+  
+
+    </div>
+    <div class="features">
+        {% for el in news %}
+            <div class="alert alert-warning">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.intro }}</p>
+                <a href="{% url 'news_detail' el.id %}" class="btn btn-warning">Подробней</a>
+            </div>
+           
+        {% endfor %}
+    </div>
+/
+    
+    
+{% endblock %}
+
+
+
